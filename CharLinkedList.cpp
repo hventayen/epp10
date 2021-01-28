@@ -10,8 +10,18 @@ bool CharLinkedList::checkList() {
 
 bool CharLinkedList::checkRecurse (SNode *ptr) {
   // COMPLETE THIS FOR PROBLEM 3
-  return true;// dummy value to stop warnings while doing Problem 2. Remove this line.
-
+  if (ptr == nullptr)
+  {
+    return true;
+  }
+  if (ptr->elem != 'G' && ptr->elem != 'A' && ptr->elem != 'T' && ptr->elem != 'C')
+  {
+    return false;
+  }
+  else
+  {
+    return checkRecurse(ptr->next);
+  }
 }
 
 void CharLinkedList::addFront(char x) {
